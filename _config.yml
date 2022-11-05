@@ -1,21 +1,21 @@
 # Site settings
-title: Another Blog
-url: "http://laobubu.github.io"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
-baseurl: "/jekyll-theme-EasyBook" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
+title: Mcherono
+url: "http://Mcherono.github.io/"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
+baseurl: "" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
 #timezone: Asia/Chongqing
 description: >
-  One or more sentences introducing this blog.
+This is my website
 
 # Your information
-email: your_email@example.com
-author: your_name
+email: mercy.cherono@aims.ac.rw
+author: Mercy Cherono
 avatar: "//www.gravatar.com/avatar/your_email_md5?d=mm&s=135"
-profile: One sentence introducing yourself.
+profile:   I am Mcherono.I like using Python.
 #twitter_username: twitter_username
 #github_username:  github_username
 profile_links:
-  Email: "mailto:your_email@example.com"
-  GitHub: "https://github.com/laobubu/jekyll-theme-EasyBook"
+  Email: "mailto:mercy.cherono@aims.ac.rw"
+  GitHub: "https://github.com/Mcherono"
   # You can add more profile links above, or edit _includes/sidebar.html 
 
 # Comment Service (Disqus or 多说)
