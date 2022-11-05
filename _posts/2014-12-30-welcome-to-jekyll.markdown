@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll and EasyBook"
-date:   2014-12-30 09:00:13
-categories: jekyll update
+title:  "Welcome to programming with Python"
+date:   2022-11-05 09:00:13
+categories: mercy update
 permalink: /archivers/hello
 ---
 
