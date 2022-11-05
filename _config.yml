@@ -1,7 +1,7 @@
 # Site settings
 title: Mcherono
 url: "http://Mcherono.github.io/"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
-baseurl: "" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
+baseurl: " " # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
 #timezone: Asia/Chongqing
 description: >
 This is my website
@@ -9,7 +9,7 @@ This is my website
 # Your information
 email: mercy.cherono@aims.ac.rw
 author: Mercy Cherono
-avatar: "https://github.com/Mcherono/Mcherono.github.io/blob/gh-pages/Mercy%20cherono%20passport%20photo.pdf?raw=true"
+avatar: "https://github.com/Mcherono/Mcherono.github.io/blob/gh-pages/Mercy%20cherono%20passport%20photo.jpg?raw=true"
 profile:   I am Mcherono.I like using Python.
 #twitter_username: twitter_username
 #github_username:  github_username
