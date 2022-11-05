@@ -4,7 +4,7 @@ url: "http://Mcherono.github.io/"    # the protocol and hostname of your site, e
 baseurl: " " # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
 #timezone: Asia/Chongqing
 description: >
-This is my website
+ This is my website
 
 # Your information
 email: mercy.cherono@aims.ac.rw
