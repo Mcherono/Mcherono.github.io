@@ -1,1018 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mercy Cherono — Data Analyst & Business Analyst</title>
-<meta name="description" content="Data Analyst and Business Analyst with MSc in Data Science and actuarial background. Open to remote and on-site roles globally." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --navy: #0f2744;
-    --navy-mid: #1a3a5c;
-    --blue: #2563a8;
-    --blue-light: #e8f0fb;
-    --teal: #0d9e75;
-    --teal-light: #e1f5ee;
-    --gold: #b8860b;
-    --gold-light: #fdf8e8;
-    --ink: #1a1a1a;
-    --ink-2: #444;
-    --ink-3: #6b6b6b;
-    --rule: #e0e0d8;
-    --bg: #fafaf7;
-    --white: #ffffff;
-    --serif: 'DM Serif Display', Georgia, serif;
-    --sans: 'DM Sans', system-ui, sans-serif;
-    --mono: 'DM Mono', monospace;
-    --max: 1100px;
-    --gap: clamp(1.5rem, 4vw, 3rem);
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--sans);
-    background: var(--bg);
-    color: var(--ink);
-    font-size: 16px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(250,250,247,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--rule);
-    padding: 0 var(--gap);
-  }
-  .nav-inner {
-    max-width: var(--max);
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 56px;
-  }
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    color: var(--navy);
-    text-decoration: none;
-    letter-spacing: 0.01em;
-  }
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-  .nav-links a {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--ink-3);
-    text-decoration: none;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--navy); }
-  .nav-cta {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--white) !important;
-    background: var(--navy);
-    padding: 0.45rem 1.1rem;
-    border-radius: 2rem;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  .nav-cta:hover { background: var(--blue) !important; }
-
-  /* ── HERO ── */
-  .hero {
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: clamp(3rem, 8vw, 6rem) var(--gap) clamp(2rem, 6vw, 4rem);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-  .hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 1.25rem;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 2px;
-    background: var(--teal);
-    border-radius: 2px;
-  }
-  .hero h1 {
-    font-family: var(--serif);
-    font-size: clamp(2.8rem, 5vw, 4rem);
-    line-height: 1.1;
-    color: var(--navy);
-    margin-bottom: 1.25rem;
-  }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--blue);
-  }
-  .hero-sub {
-    font-size: 1.05rem;
-    color: var(--ink-2);
-    line-height: 1.75;
-    margin-bottom: 2rem;
-    max-width: 480px;
-  }
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .btn-primary {
-    background: var(--navy);
-    color: var(--white);
-    padding: 0.7rem 1.5rem;
-    border-radius: 2rem;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: background 0.2s, transform 0.15s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: var(--blue); transform: translateY(-1px); }
-  .btn-outline {
-    border: 1.5px solid var(--navy);
-    color: var(--navy);
-    padding: 0.65rem 1.4rem;
-    border-radius: 2rem;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.2s;
-    display: inline-block;
-  }
-  .btn-outline:hover { background: var(--navy); color: var(--white); }
-
-  .hero-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .stat-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-  .stat-card {
-    background: var(--white);
-    border: 1px solid var(--rule);
-    border-radius: 12px;
-    padding: 1.25rem 1.5rem;
-  }
-  .stat-card .num {
-    font-family: var(--serif);
-    font-size: 2rem;
-    color: var(--navy);
-    line-height: 1;
-    margin-bottom: 0.3rem;
-  }
-  .stat-card .label {
-    font-size: 0.8rem;
-    color: var(--ink-3);
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-  }
-  .badge-row {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-top: 0.5rem;
-  }
-  .badge {
-    font-size: 0.75rem;
-    font-weight: 600;
-    font-family: var(--mono);
-    padding: 0.3rem 0.7rem;
-    border-radius: 4px;
-    letter-spacing: 0.02em;
-  }
-  .badge-blue { background: var(--blue-light); color: var(--blue); }
-  .badge-teal { background: var(--teal-light); color: #0a7a5c; }
-  .badge-gold { background: var(--gold-light); color: var(--gold); }
-  .badge-navy { background: #e8edf5; color: var(--navy); }
-
-  .avail-banner {
-    background: var(--teal-light);
-    border: 1px solid #9fe1cb;
-    border-radius: 10px;
-    padding: 1rem 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 0.9rem;
-    color: #085041;
-    font-weight: 500;
-  }
-  .avail-dot {
-    width: 10px;
-    height: 10px;
-    background: var(--teal);
-    border-radius: 50%;
-    flex-shrink: 0;
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-
-  /* ── SECTION COMMONS ── */
-  section { padding: clamp(3rem, 6vw, 5rem) var(--gap); }
-  .section-inner { max-width: var(--max); margin: 0 auto; }
-  .section-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    margin-bottom: 0.6rem;
-  }
-  .section-title {
-    font-family: var(--serif);
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    color: var(--navy);
-    margin-bottom: 2.5rem;
-    line-height: 1.2;
-  }
-  .section-title em { font-style: italic; color: var(--blue); }
-
-  /* ── ABOUT ── */
-  #about { background: var(--white); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-  .about-body p {
-    font-size: 1.02rem;
-    color: var(--ink-2);
-    margin-bottom: 1.1rem;
-    line-height: 1.8;
-  }
-  .about-body p strong { color: var(--navy); font-weight: 600; }
-  .about-aside { display: flex; flex-direction: column; gap: 1.25rem; }
-  .aside-card {
-    border: 1px solid var(--rule);
-    border-radius: 10px;
-    padding: 1.1rem 1.3rem;
-  }
-  .aside-card .aside-title {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    margin-bottom: 0.5rem;
-  }
-  .aside-card p { font-size: 0.92rem; color: var(--ink-2); }
-  .aside-card a { color: var(--blue); text-decoration: none; }
-  .aside-card a:hover { text-decoration: underline; }
-
-  /* ── EXPERIENCE ── */
-  #experience { background: var(--bg); }
-  .exp-list { display: flex; flex-direction: column; gap: 0; }
-  .exp-item {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 2rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  .exp-item:last-child { border-bottom: none; }
-  .exp-meta { padding-top: 0.15rem; }
-  .exp-dates {
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    color: var(--ink-3);
-    margin-bottom: 0.3rem;
-    letter-spacing: 0.02em;
-  }
-  .exp-company {
-    font-weight: 600;
-    font-size: 0.88rem;
-    color: var(--navy);
-    margin-bottom: 0.2rem;
-  }
-  .exp-location {
-    font-size: 0.78rem;
-    color: var(--ink-3);
-  }
-  .exp-content {}
-  .exp-role {
-    font-weight: 600;
-    font-size: 1.05rem;
-    color: var(--ink);
-    margin-bottom: 0.75rem;
-  }
-  .exp-bullets {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-  }
-  .exp-bullets li {
-    font-size: 0.92rem;
-    color: var(--ink-2);
-    padding-left: 1rem;
-    position: relative;
-    line-height: 1.65;
-  }
-  .exp-bullets li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--blue);
-    font-weight: 300;
-  }
-
-  /* ── SKILLS ── */
-  #skills { background: var(--navy); }
-  #skills .section-title { color: var(--white); }
-  #skills .section-label { color: rgba(255,255,255,0.45); }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.25rem;
-  }
-  .skill-group {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 1.4rem;
-  }
-  .skill-group-title {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 1rem;
-  }
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-  .skill-tag {
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.85);
-    background: rgba(255,255,255,0.09);
-    border: 1px solid rgba(255,255,255,0.15);
-    padding: 0.25rem 0.6rem;
-    border-radius: 4px;
-  }
-
-  /* ── PROJECTS ── */
-  #projects { background: var(--white); border-top: 1px solid var(--rule); }
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-  .project-card {
-    border: 1px solid var(--rule);
-    border-radius: 14px;
-    padding: 1.75rem;
-    background: var(--bg);
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    transition: border-color 0.2s, transform 0.2s;
-    position: relative;
-  }
-  .project-card:hover { border-color: var(--blue); transform: translateY(-2px); }
-  .project-num {
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    color: var(--ink-3);
-    letter-spacing: 0.06em;
-  }
-  .project-title {
-    font-family: var(--serif);
-    font-size: 1.25rem;
-    color: var(--navy);
-    line-height: 1.25;
-  }
-  .project-desc {
-    font-size: 0.9rem;
-    color: var(--ink-2);
-    line-height: 1.7;
-    flex: 1;
-  }
-  .project-impact {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--teal);
-    background: var(--teal-light);
-    padding: 0.35rem 0.75rem;
-    border-radius: 4px;
-    display: inline-block;
-    width: fit-content;
-  }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.25rem; }
-  .project-tag {
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    color: var(--ink-3);
-    background: var(--rule);
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-  }
-  .project-link {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--blue);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    margin-top: 0.25rem;
-  }
-  .project-link:hover { text-decoration: underline; }
-  .project-wip {
-    font-size: 0.75rem;
-    font-weight: 600;
-    font-family: var(--mono);
-    color: var(--gold);
-    background: var(--gold-light);
-    border: 1px solid #e8d47a;
-    padding: 0.25rem 0.65rem;
-    border-radius: 4px;
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-  }
-
-  /* ── EDUCATION ── */
-  #education { background: var(--bg); border-top: 1px solid var(--rule); }
-  .edu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.25rem;
-  }
-  .edu-card {
-    background: var(--white);
-    border: 1px solid var(--rule);
-    border-radius: 12px;
-    padding: 1.5rem 1.75rem;
-  }
-  .edu-degree {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    color: var(--navy);
-    margin-bottom: 0.3rem;
-    line-height: 1.3;
-  }
-  .edu-school {
-    font-size: 0.88rem;
-    color: var(--ink-2);
-    margin-bottom: 0.2rem;
-  }
-  .edu-dates {
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    color: var(--ink-3);
-    margin-bottom: 0.75rem;
-  }
-  .edu-honour {
-    display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 700;
-    background: var(--gold-light);
-    color: var(--gold);
-    border: 1px solid #e8d47a;
-    padding: 0.25rem 0.7rem;
-    border-radius: 4px;
-    letter-spacing: 0.03em;
-  }
-  .edu-inprogress {
-    display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 700;
-    background: var(--blue-light);
-    color: var(--blue);
-    padding: 0.25rem 0.7rem;
-    border-radius: 4px;
-    letter-spacing: 0.03em;
-  }
-
-  /* ── CONTACT ── */
-  #contact { background: var(--navy); }
-  #contact .section-title { color: var(--white); }
-  #contact .section-label { color: rgba(255,255,255,0.45); }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-  .contact-body {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.8;
-    margin-bottom: 2rem;
-  }
-  .contact-links { display: flex; flex-direction: column; gap: 0.85rem; }
-  .contact-link {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
-    color: rgba(255,255,255,0.85);
-    font-size: 0.92rem;
-    transition: color 0.2s;
-  }
-  .contact-link:hover { color: var(--white); }
-  .contact-link-icon {
-    width: 36px;
-    height: 36px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    flex-shrink: 0;
-  }
-  .contact-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .contact-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 1.5rem;
-  }
-  .contact-card-title {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 0.75rem;
-  }
-  .contact-card p {
-    font-size: 0.92rem;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.65;
-  }
-  .contact-card strong { color: rgba(255,255,255,0.9); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy);
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding: 1.5rem var(--gap);
-    text-align: center;
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.3);
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    .hero { grid-template-columns: 1fr; gap: 2.5rem; }
-    .about-grid { grid-template-columns: 1fr; }
-    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .nav-links { display: none; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercy Cherono | Data Analyst</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #333;
+      background: #fafafa;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #111;
+    }
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: #fff;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      text-decoration: none;
+      border: 1px solid #333;
+      border-radius: 5px;
+      color: #333;
+    }
+    section {
+      margin: 40px 0;
+    }
+    .project {
+      margin-bottom: 30px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a class="nav-logo" href="#">Mercy Cherono</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact" class="nav-cta">Get in touch</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow">Open to work · Remote & on-site</div>
-    <h1>Data that <em>drives</em> decisions.</h1>
-    <p class="hero-sub">
-      I'm Mercy — a data analyst with an MSc in Data Science and an actuarial science foundation. I build pipelines, models, and dashboards that turn messy data into something a business can act on.
-    </p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn-primary">View my work</a>
-      <a href="Mercy_Cherono_CV.pdf" class="btn-outline" download>Download CV</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="avail-banner">
-      <div class="avail-dot"></div>
-      Available now — open to remote and on-site roles globally
-    </div>
-    <div class="stat-grid">
-      <div class="stat-card">
-        <div class="num">5+</div>
-        <div class="label">Years of experience</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">80%</div>
-        <div class="label">Processing time cut via automation</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">MSc</div>
-        <div class="label">Data Science · Distinction</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">BSc</div>
-        <div class="label">Actuarial Science · 1st Class</div>
-      </div>
-    </div>
-    <div class="badge-row">
-      <span class="badge badge-blue">Python</span>
-      <span class="badge badge-navy">SQL</span>
-      <span class="badge badge-teal">R</span>
-      <span class="badge badge-blue">Power BI</span>
-      <span class="badge badge-navy">Scikit-learn</span>
-      <span class="badge badge-teal">Excel</span>
-    </div>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-inner">
-    <div class="section-label">01 — About</div>
-    <h2 class="section-title">Where actuarial rigour meets <em>data science</em></h2>
-    <div class="about-grid">
-      <div class="about-body">
-        <p>My background is a bit unusual. I spent four years studying actuarial science — which means I learned to think carefully about uncertainty, risk, and what numbers actually mean before I ever touched a line of Python. Then I went on to do an MSc in Data Science at AIMS Rwanda, graduating with a Distinction.</p>
-        <p>That combination matters. Most analysts can run a model. Fewer can tell you whether the model's output is <strong>actually reliable</strong>, or what the business should do differently based on what it found. I can do both.</p>
-        <p>I work across the full analytics stack — pulling and cleaning data with Python or SQL, finding patterns, building dashboards and pipelines, and communicating findings to people who didn't ask for a statistics lecture. I've worked in insurance, wholesale, and research settings, which means I'm used to data that's inconsistent, incomplete, and politically sensitive.</p>
-
-      </div>
-      <div class="about-aside">
-        <div class="aside-card">
-          <div class="aside-title">Location & timezone</div>
-          <p>Nairobi, Kenya · UTC+3<br/>Available for remote teams in any timezone — I have experience managing asynchronous workloads.</p>
-        </div>
-        <div class="aside-card">
-          <div class="aside-title">Domain expertise</div>
-          <p>Insurance analytics · Financial services · Risk & underwriting · Development sector · Retail & wholesale operations</p>
-        </div>
-        <div class="aside-card">
-          <div class="aside-title">Languages</div>
-          <p>English (fluent) · Kiswahili (fluent) · Kalenjin (fluent)</p>
-        </div>
-        <div class="aside-card">
-          <div class="aside-title">Profiles</div>
-          <p>
-            <a href="https://linkedin.com/in/mercy-cherono-82148916a" target="_blank">LinkedIn ↗</a> &nbsp;·&nbsp;
-            <a href="https://github.com/Mcherono" target="_blank">GitHub ↗</a>
-          </p>
-        </div>
+  <div class="hero">
+    <div class="container">
+      <h1>Hi, I'm Mercy — Data Analyst</h1>
+      <p>I work with messy, real-world data and turn it into insights people can actually use.</p>
+      <div class="buttons">
+        <a href="#projects">View Projects</a>
+        <a href="cv.pdf" target="_blank">Download CV</a>
       </div>
     </div>
   </div>
-</section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-inner">
-    <div class="section-label">02 — Experience</div>
-    <h2 class="section-title">Where I've <em>applied</em> my work</h2>
-    <div class="exp-list">
+  <div class="container">
 
-      <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-dates">Mar 2026 – Present</div>
-          <div class="exp-company">Future Interns</div>
-          <div class="exp-location">Remote</div>
-        </div>
-        <div class="exp-content">
-          <div class="exp-role">Data Science & Analytics Intern</div>
-          <ul class="exp-bullets">
-            <li>Built a customer churn classifier in Scikit-learn hitting 80–85% accuracy, then wrote it up as a business report with concrete retention recommendations — not just a model dump.</li>
-            <li>Designed KPI dashboards in Python and Excel tracking revenue, profit margin, and regional sales growth, built to be readable by non-technical stakeholders.</li>
-            <li>Ran three projects simultaneously — sales analysis, churn prediction, marketing funnel — each with its own dataset, deadline, and deliverable format.</li>
-          </ul>
-        </div>
+    <section>
+      <h2>About</h2>
+      <p>I have a background in actuarial science and a Master’s in Data Science. Most of my work involves cleaning and analysing data, building models or dashboards, and explaining results to non-technical teams.</p>
+      <p>I enjoy solving real-world problems where the data isn’t perfect and the answer isn’t obvious.</p>
+    </section>
+
+    <section>
+      <h2>What I Do</h2>
+      <p><strong>Data Analysis & Cleaning:</strong> Preparing and analysing raw datasets using Python and SQL.</p>
+      <p><strong>Dashboards & Reporting:</strong> Building dashboards in Excel and Power BI for decision-making.</p>
+      <p><strong>Machine Learning:</strong> Developing predictive models and translating results into insights.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>Customer Churn Prediction</h3>
+        <p>Built a machine learning model to predict customer churn and identified key drivers like contract type and tenure.</p>
+        <p><strong>Tools:</strong> Python, Scikit-learn, Excel</p>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-dates">Mar 2024 – Dec 2025</div>
-          <div class="exp-company">Britam Insurance</div>
-          <div class="exp-location">Nairobi, Kenya</div>
-        </div>
-        <div class="exp-content">
-          <div class="exp-role">Business Processing & Compliance Assistant</div>
-          <ul class="exp-bullets">
-            <li>Managed data quality across 100+ policy and member records monthly — cleaning, validating, and reconciling financial and membership data before it touched management reporting.</li>
-            <li>Submitted operational and compliance reports to management and regulators on strict SLA timelines, without missing a deadline across 21 months.</li>
-            <li>Coordinated data workflows across underwriting, finance, and client services — the kind of role where your accuracy either builds trust or breaks things downstream.</li>
-          </ul>
-        </div>
+      <div class="project">
+        <h3>COVID-19 Data Pipeline</h3>
+        <p>Built a full data pipeline from raw data to automated reporting and dashboard creation.</p>
+        <p><strong>Tools:</strong> Python, pandas, Excel</p>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-dates">Oct – Dec 2023</div>
-          <div class="exp-company">Mega Wholesalers</div>
-          <div class="exp-location">Nairobi, Kenya</div>
-        </div>
-        <div class="exp-content">
-          <div class="exp-role">Data Analytics & Programming Intern</div>
-          <ul class="exp-bullets">
-            <li>Wrote Python scripts and SQL queries automating data cleaning and transformation workflows — cut manual processing time by roughly 80%.</li>
-            <li>Analysed sales and operations data to flag inefficiencies in logistics and procurement; findings fed directly into management planning.</li>
-          </ul>
-        </div>
+      <div class="project">
+        <h3>Sales Performance Analysis</h3>
+        <p>Analysed sales data to identify trends, top products, and underperforming regions.</p>
+        <p><strong>Tools:</strong> Python, Excel</p>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-dates">Aug 2021 – Aug 2022</div>
-          <div class="exp-company">Minet Kenya</div>
-          <div class="exp-location">Nairobi, Kenya</div>
-        </div>
-        <div class="exp-content">
-          <div class="exp-role">Medical Underwriter → Intern</div>
-          <ul class="exp-bullets">
-            <li>Priced and processed medical insurance policies using actuarial judgement, then reconciled the financials and validated membership data across a large client portfolio.</li>
-            <li>Managed policy issuance, renewals, and membership data validation — where I learned that clean data at input saves everyone hours downstream.</li>
-          </ul>
-        </div>
-      </div>
+    </section>
 
-    </div>
+    <section>
+      <h2>Experience</h2>
+      <p><strong>Future Interns:</strong> Built dashboards and a churn model across multiple datasets.</p>
+      <p><strong>Britam Insurance:</strong> Worked on data quality, reporting, and reconciliation across teams.</p>
+    </section>
+
+    <section>
+      <h2>How I Work</h2>
+      <p>I start by understanding and cleaning the data, then explore patterns before building models. I focus on making results clear and useful.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Email: mercy.cherono@aims.ac.rw</p>
+      <p>
+        <a href="https://github.com/Mcherono" target="_blank">GitHub</a> |
+        <a href="https://linkedin.com/in/mercy-cherono" target="_blank">LinkedIn</a>
+      </p>
+    </section>
+
   </div>
-</section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-inner">
-    <div class="section-label">03 — Skills</div>
-    <h2 class="section-title">Tools of <em>the trade</em></h2>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <div class="skill-group-title">Languages & analysis</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">pandas</span>
-          <span class="skill-tag">NumPy</span>
-          <span class="skill-tag">R</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">Julia</span>
-          <span class="skill-tag">Bash</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Visualisation & BI</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Power BI</span>
-          <span class="skill-tag">Excel (advanced)</span>
-          <span class="skill-tag">matplotlib</span>
-          <span class="skill-tag">seaborn</span>
-          <span class="skill-tag">ggplot2</span>
-          <span class="skill-tag">Google Sheets</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Machine learning & stats</div>
-        <div class="skill-tags">
-          <span class="skill-tag">scikit-learn</span>
-          <span class="skill-tag">Classification</span>
-          <span class="skill-tag">Regression</span>
-          <span class="skill-tag">Time Series</span>
-          <span class="skill-tag">Non-parametric</span>
-          <span class="skill-tag">Statistical modelling</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Automation & engineering</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Pipeline automation</span>
-          <span class="skill-tag">ETL</span>
-          <span class="skill-tag">openpyxl</span>
-          <span class="skill-tag">Google Colab</span>
-          <span class="skill-tag">Linux</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Domain knowledge</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Insurance analytics</span>
-          <span class="skill-tag">Actuarial science</span>
-          <span class="skill-tag">Risk analysis</span>
-          <span class="skill-tag">Financial modelling</span>
-          <span class="skill-tag">Underwriting</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Tools & platforms</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">Jupyter</span>
-          <span class="skill-tag">VS Code</span>
-          <span class="skill-tag">DBeaver</span>
-          <span class="skill-tag">RStudio</span>
-          <span class="skill-tag">LaTeX</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-inner">
-    <div class="section-label">04 — Projects</div>
-    <h2 class="section-title">Selected <em>work</em></h2>
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="project-num">01</div>
-        <div class="project-title">COVID-19 Data Pipeline & Dashboard</div>
-        <div class="project-desc">Built a full pipeline on a 209-country dataset — audit, cleaning, feature engineering (Death Rate %, Risk Level classification), and automated report generation straight to a formatted Excel dashboard. No manual steps once the script runs.</div>
-        <div class="project-impact">↓ 80% reduction in manual processing time</div>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">pandas</span>
-          <span class="project-tag">openpyxl</span>
-          <span class="project-tag">Excel</span>
-          <span class="project-tag">Automation</span>
-        </div>
-        <a href="https://github.com/Mcherono" class="project-link" target="_blank">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">02</div>
-        <div class="project-title">Customer Churn Prediction & Segmentation</div>
-        <div class="project-desc">Trained a classification model to predict churn at 80–85% accuracy. Identified the key drivers — contract type, tenure, monthly charges — and turned the output into a practical retention strategy document, not just model metrics.</div>
-        <div class="project-impact">80–85% model accuracy</div>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">scikit-learn</span>
-          <span class="project-tag">pandas</span>
-          <span class="project-tag">Excel</span>
-        </div>
-        <a href="https://github.com/Mcherono" class="project-link" target="_blank">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">03</div>
-        <div class="project-title">Superstore Sales Performance Analysis</div>
-        <div class="project-desc">Full analysis of regional sales data — which products, segments, and markets were working and which weren't. Built interactive dashboards tracking revenue, profit margin, and growth vs. target. Includes written commentary for non-technical readers.</div>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">pandas</span>
-          <span class="project-tag">matplotlib</span>
-          <span class="project-tag">Excel</span>
-          <span class="project-tag">Google Colab</span>
-        </div>
-        <a href="https://github.com/Mcherono" class="project-link" target="_blank">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">04</div>
-        <div class="project-title">MSc Dissertation — Non-Parametric Probability Modelling</div>
-        <div class="project-desc">Developed a statistical model to estimate the probability of a first success in sequential trials, applied to risk scenarios. Independent research from problem definition through to formal write-up. Graduated with Distinction.</div>
-        <div class="project-impact">MSc Distinction — AIMS Rwanda</div>
-        <div class="project-tags">
-          <span class="project-tag">R</span>
-          <span class="project-tag">Python</span>
-          <span class="project-tag">Statistical modelling</span>
-          <span class="project-tag">Non-parametric methods</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="section-inner">
-    <div class="section-label">05 — Education</div>
-    <h2 class="section-title">Academic <em>foundation</em></h2>
-    <div class="edu-grid">
-      <div class="edu-card">
-        <div class="edu-degree">MSc Mathematical Sciences — Data Science</div>
-        <div class="edu-school">African Institute for Mathematical Sciences (AIMS) · Kigali, Rwanda</div>
-        <div class="edu-dates">Aug 2022 – Jun 2023</div>
-        <span class="edu-honour">Distinction</span>
-      </div>
-      <div class="edu-card">
-        <div class="edu-degree">BSc Actuarial Science</div>
-        <div class="edu-school">Karatina University · Nyeri, Kenya</div>
-        <div class="edu-dates">Aug 2017 – Dec 2021</div>
-        <span class="edu-honour">First Class Honours</span>
-      </div>
-      <div class="edu-card">
-        <div class="edu-degree">CIFA — Certified Investment & Financial Analyst</div>
-        <div class="edu-school">KASNEB · Kenya</div>
-        <div class="edu-dates">In progress</div>
-        <span class="edu-inprogress">In progress</span>
-      </div>
-      <div class="edu-card">
-        <div class="edu-degree">ALX Africa Software Engineering Programme</div>
-        <div class="edu-school">ALX Africa</div>
-        <div class="edu-dates">2022 – 2023</div>
-        <div class="badge-row" style="margin-top:0.5rem;">
-          <span class="badge badge-navy">Linux</span>
-          <span class="badge badge-navy">Bash</span>
-          <span class="badge badge-navy">C Programming</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-inner">
-    <div class="section-label">06 — Contact</div>
-    <h2 class="section-title">Let's <em>work</em> together</h2>
-    <div class="contact-grid">
-      <div>
-        <p class="contact-body">If you have a role that involves working with data and solving real problems, I'd love to hear from you. Remote or on-site, I'm open — just reach out.</p>
-        <div class="contact-links">
-          <a href="mailto:mercy.cherono@aims.ac.rw" class="contact-link">
-            <div class="contact-link-icon">✉</div>
-            mercy.cherono@aims.ac.rw
-          </a>
-          <a href="https://linkedin.com/in/mercy-cherono-82148916a" class="contact-link" target="_blank">
-            <div class="contact-link-icon">in</div>
-            linkedin.com/in/mercy-cherono
-          </a>
-          <a href="https://github.com/Mcherono" class="contact-link" target="_blank">
-            <div class="contact-link-icon">gh</div>
-            github.com/Mcherono
-          </a>
-
-        </div>
-      </div>
-      <div class="contact-right">
-        <div class="contact-card">
-          <div class="contact-card-title">Availability</div>
-          <p><strong>Open to work</strong> — actively looking for Data Analyst, Business Analyst, or Data Scientist roles. Remote or on-site. Full-time or contract.</p>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-title">Location & timezone</div>
-          <p>Based in <strong>Nairobi, Kenya (UTC+3)</strong>. Comfortable with async-first remote teams. Open to relocation for the right on-site role.</p>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-title">Response time</div>
-          <p>I respond to most messages within <strong>24 hours</strong> on working days.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 Mercy Cherono · Built with care · Nairobi, Kenya
-</footer>
+  <footer>
+    <p>© 2026 Mercy Cherono</p>
+  </footer>
 
 </body>
 </html>
